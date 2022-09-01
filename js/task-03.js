@@ -12,3 +12,17 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const makeImagesRowMarkUp = image => {
+  const { url, alt } = image;
+
+  return `<li><img class="fotocats" src = ${url} alt = '${alt}' /></li>`;
+}
+
+const listEl = document.querySelector('ul');
+const makeFullImagesRow = images.map(makeImagesRowMarkUp).join('');
+listEl.insertAdjacentHTML("beforeend", makeFullImagesRow);
+console.log(makeFullImagesRow);
+
+
+
