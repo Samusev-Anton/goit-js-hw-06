@@ -28,12 +28,13 @@ button {
   padding: 0;
   margin: 0;
   display: grid;
+  justify-content: center;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(auto, auto);
   grid-gap: 20px;
 }
 
 .fotocats {
-  width: 33vw;
+  width: 32vw;
   display: block;
 }
