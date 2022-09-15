@@ -14,23 +14,23 @@ const insertPoint = document.querySelector('#boxes');
 const inputEl = document.querySelector('input');
 
 bntCreateDiv.addEventListener('click', createBoxes);
-inputEl.addEventListener('input', onInputeChange);
+bntDestroy.addEventListener('click', deleteBoxes);
 
-function onInputeChange(event) {
-  const inputDataStr = Number(event.currentTarget.value);
-  console.log(inputDataStr);
-  return inputDataStr;
-}
+// function onInputeChange(event) {
+//   const inputDataStr = Number(event.currentTarget.value);
+//   console.log(inputDataStr);
+//   return inputDataStr;
+// }
 
 // console.log(onInputeChange(event));
 
 function createBoxes(amount) {
-  amount = inputDataStr;
+  amount = Number(inputEl.value);
   console.log(amount);
   let boxElements = [];
   let boxHeight = 20;
   let boxWidht = 20;
-  for (let i = 0; i < amount; i+1) {
+  for (let i = 0; i < amount; i += 1) {
     boxHeight += 10;
     boxWidht += 10;
     const divEl = document.createElement('div');
@@ -39,9 +39,11 @@ function createBoxes(amount) {
     divEl.style.background = getRandomHexColor();
     // console.log(divEl);
     boxElements.push(divEl);
-// код создания элемента
   }
   console.log(boxElements);
   insertPoint.append(...boxElements);
 }
-// createBoxes(7);
+
+function deleteBoxes() {
+  insertPoint.remove();
+}
